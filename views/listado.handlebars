@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Listado de productos</h1>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th class="width=10%">ID</th>
+            <th class="width=70%">Producto</th>
+            <th class="width=10%">Precio</th>
+            <th class="width=10%">Imagen</th>
+        </tr>
+        {{#if data.length}}
+            {{#each data}}
+            <tr>
+                <td align="center">{{this.id}}</td>
+                <td>{{this.title}}</td>
+                <td align="right">{{this.price}}</td>
+                <td align="center"><img src="{{this.thumbnail}}" width="50px" height="50px"/></td>
+            </tr>
+            {{/each}}
+        {{else}}
+            <tr>
+                <td align="center" colspan="4"><h2>No se encontraro productos</h2></td>
+            </tr>
+        {{/if}}
+    </table>
+    <br/>
+    <a href="/" class="btn btn-danger" style="width: 100%;">Volver</a>
+</div>
